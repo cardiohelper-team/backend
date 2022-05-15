@@ -22,3 +22,14 @@ https://stackoverflow.com/questions/49795303/encode-pdf-to-base64-in-reactjs
 Результат вернется в формате `json`. Предсказание будет доступно по атрибуту `prediction`. 
 
 При ошибке вернется `json` с ошибкой, текст которой будет доступен по атрибуту `error`.
+
+# Как развернуть бэкенд в Docker-контейнере
+
+1. Находясь в директории с репозиторием, собрать образ: `docker build -t cardiohelper .`.
+2. Создать контейнер с именем `cardiohelper` и запустить в фоне:  `docker run -p 8000:8000 --name cardiohelper -d cardiohelper`.
+3. Остановить контейнер: `docker stop cardiohelper`.
+4. Повторно запустить уже созданный контейнер: `docker stop cardiohelper`.
+
+# Как протестировать точку доступа
+
+cURL: `(echo -n '{"file": "'; base64 file.pdf; echo '"}') | curl -H "Content-Type: application/json" -d @-  http://127.0.0.1:8000/api/v1/upload  `
