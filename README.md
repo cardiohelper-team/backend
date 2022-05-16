@@ -30,6 +30,11 @@ https://stackoverflow.com/questions/49795303/encode-pdf-to-base64-in-reactjs
 3. Остановить контейнер: `docker stop cardiohelper`.
 4. Повторно запустить уже созданный контейнер: `docker stop cardiohelper`.
 
-# Как протестировать точку доступа
+# Как протестировать точки доступа
 
-cURL: `(echo -n '{"file": "'; base64 file.pdf; echo '"}') | curl -H "Content-Type: application/json" -d @-  http://127.0.0.1:8000/api/v1/upload  `
+cURL: 
+
+`(echo -n '{"file": "'; base64 file.pdf; echo '"}') | curl -H "Content-Type: application/json" -d @-  http://127.0.0.1:8000/api/v1/upload`
+
+`(echo -n '{"image": "'; base64 ecg.jpg; echo '"}') | curl -H "Content-Type: application/json" -d @-  http://127.0.0.1:8000/api/v1/predict `
+
