@@ -8,3 +8,4 @@ six
 django
 djangorestframework
 pdf2image
+django-cors-headers
