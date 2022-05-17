@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'predict.apps.PredictConfig',
-    'upload.apps.UploadConfig'
+    'upload.apps.UploadConfig',
+    'entry.apps.EntryConfig'
 ]
 
 MIDDLEWARE = [
