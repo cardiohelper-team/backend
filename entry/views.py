@@ -5,7 +5,7 @@ from predict.models import Prediction
 
 class EntryAPIView(APIView):
 
-    def get(self, request):
+    def post(self, request):
         user = request.data['user']
         entries = Prediction.objects.filter(user__exact=user)
         
