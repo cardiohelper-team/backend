@@ -12,11 +12,11 @@ class PredictAPIView(APIView):
             Prediction.objects.create(
                 file=request.data["image"],
                 category=res,
-                owner='user'
+                user='user'
             )
 
-            return Response(str({
+            return Response({
                 'prediction': res
-            }))
+            })
         except Exception as e:
             return Response(f'error: {e}')
