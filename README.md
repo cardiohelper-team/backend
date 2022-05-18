@@ -38,3 +38,5 @@ cURL:
 
 `(echo -n '{"image": "'; base64 ecg.jpg; echo '"}') | curl -H "Content-Type: application/json" -d @-  http://127.0.0.1:8000/api/v1/predict `
 
+`curl -H "Content-Type: application/json" -d '{"user":"user"}' http://127.0.0.1:8000/api/v1/entry`
+
